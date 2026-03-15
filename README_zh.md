@@ -196,6 +196,27 @@ client.Realtime.Market.SubscribeCryptoPrices([]string{"ETH", "BTC"})
 | `APIKey` / `Secret` / `Passphrase` | CLOB API 凭证。用于 WebSocket 认证和提升 REST 限频。 | 否（建议填） |
 | `RPCURL` | Polygon 节点地址。用于链上交互 (CTF)。 | 是（链上操作时） |
 
+## 环境变量
+
+将 `.env.example` 复制为 `.env` 并填入你的配置：
+
+```bash
+cp .env.example .env
+```
+
+SDK 及集成测试使用以下环境变量：
+
+| 变量 | 说明 | 必填 |
+| :--- | :--- | :--- |
+| `POLY_PRIVATE_KEY` | EOA 钱包私钥（Hex，含 `0x` 前缀） | 是（交易时） |
+| `POLY_FUNDER_ADDR` | Gnosis Safe 代理地址 | 否 |
+| `CLOB_API_KEY` | CLOB API Key | 否（建议填） |
+| `CLOB_SECRET` | CLOB API Secret | 否（建议填） |
+| `CLOB_PASSPHRASE` | CLOB API Passphrase | 否（建议填） |
+| `POLY_RPC_URL` | Polygon RPC 节点地址 | 是（链上操作时） |
+| `PROXY` | HTTP/SOCKS5 代理地址（Data API 客户端使用） | 否 |
+| `ENABLE_SPEND_TESTS` | 设为 `true` 启用消耗真实资金的测试 | 否 |
+
 ## 目录结构
 
 ```

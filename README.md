@@ -196,6 +196,27 @@ For finer-grained control, access low-level clients via the Root Client:
 | `APIKey` / `Secret` / `Passphrase` | CLOB API credentials for WebSocket auth and rate limits. | No (recommended) |
 | `RPCURL` | Polygon RPC endpoint for on-chain operations (CTF). | Yes (for on-chain) |
 
+## Environment Variables
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+The SDK and integration tests use the following environment variables:
+
+| Variable | Description | Required |
+| :--- | :--- | :--- |
+| `POLY_PRIVATE_KEY` | EOA wallet private key (Hex, with `0x` prefix) | Yes (for trading) |
+| `POLY_FUNDER_ADDR` | Gnosis Safe proxy address | No |
+| `CLOB_API_KEY` | CLOB API key | No (recommended) |
+| `CLOB_SECRET` | CLOB API secret | No (recommended) |
+| `CLOB_PASSPHRASE` | CLOB API passphrase | No (recommended) |
+| `POLY_RPC_URL` | Polygon RPC endpoint | Yes (for on-chain) |
+| `PROXY` | HTTP/SOCKS5 proxy URL (used by Data API client) | No |
+| `ENABLE_SPEND_TESTS` | Set to `true` to enable tests that spend real funds | No |
+
 ## Project Structure
 
 ```
